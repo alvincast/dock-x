@@ -120,4 +120,35 @@
     border-radius: 9999px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   }
+  .border-bottom-gray {
+    padding :0.75rem;
+    border-bottom-width: 1px;
+    border-color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-gray-bold {
+    color: gray;
+    font-weight: bold;
+    font-size: 1.125rem; 
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-action-container-dir{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.75rem; /* 0.75rem es equivalente a mt-3 en Tailwind */
+  }
+
+  .actions-container-label {
+    margin-top: 0.5rem; /* mt-2 */
+    display: flex; /* flex */
+    justify-content: flex-end; /* justify-end */
+    align-items: center; /* items-center */
+  }
   
+  .actions-text {
+    color: #9ca3af; /* text-gray-400 */
+    font-size: 0.75rem; /* text-xs */
+  }

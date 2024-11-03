@@ -1,12 +1,12 @@
 {
   "name": "dock-x",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "A menu options dock style",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc && copy src\\styles.css dist\\"
   },
   "dependencies": {
     "react": "^17.0.0 || ^18.0.0",

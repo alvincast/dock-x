@@ -1,6 +1,5 @@
 src/
 node_modules/
 *.log
-*.ts
 *.tsx
 *.map

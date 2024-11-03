@@ -72,23 +72,24 @@ import React from 'react';
 import Dock from 'dock-x';
 
 const App: React.FC = () => {
-  const options = [
+   const options:IDockOption[] = [
     {
-      icon: () => <span>🔔</span>,
+      icon: () => <FaAccusoft/>,
       label: 'Attend',
-      onOptionSelected: (option) => console.log(option.label),
+      actions:[
+        {
+          label:"a",
+          onSelect: ()=>console.log("a")
+        }
+      ]
     },
-    {
-      icon: () => <span>✅</span>,
-      label: 'Finalize',
-      onOptionSelected: (option) => console.log(option.label),
-    },
+  
   ];
 
   return (
     <div>
       <h1>My Application</h1>
-      <Dock options={options} hideInRoute="/hidden" />
+      <Dock options={options}  />
     </div>
   );
 };
