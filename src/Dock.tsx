@@ -66,7 +66,7 @@ const Dock = ({
 
                 <div className="mt-2 flex justify-end items-center">
                   <span className="text-gray-400 text-xs">
-                    Seleccione una acción
+                    Actions
                   </span>
                 </div>
               </div>
