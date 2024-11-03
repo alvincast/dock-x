@@ -12,7 +12,6 @@ export interface IDockAction {
   
   export interface DockProps {
     options: IDockOption[];
-    hideOnRoute?: string;
     showLabel?: string;
     hideLabel?: string;
   }

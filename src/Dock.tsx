@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-
-import { useLocation } from "react-router-dom";
 import "./styles.css";
 import { DockProps } from "./interfaces";
 
 
 const Dock = ({
   options,
-  hideOnRoute,
-  showLabel = "Mostrar Pendientes",
-  hideLabel = "Esconder Pendientes",
+  showLabel = "Show",
+  hideLabel = "Hide",
 }: DockProps) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [menuVisible, setMenuVisible] = useState<number | null>(null);
-  const location = useLocation();
+
 
   const totalIcons = options.length;
-  const shouldHideDock = hideOnRoute && location.pathname.startsWith(hideOnRoute);
+  
 
   const toggleDockVisibility = () => {
     setIsVisible(!isVisible);
@@ -28,15 +25,17 @@ const Dock = ({
 
   return (
     <div>
-      {!isVisible && !shouldHideDock && (
+      {!isVisible  && (
         <button onClick={toggleDockVisibility} className="button-show">
           {showLabel}
           <span className="badge">{totalIcons}</span>
         </button>
       )}
 
-      <div
-        className={`dock-container ${!isVisible ? "hidden" : ""}`}
+     {
+      isVisible && (
+        <div
+        className={`dock-container `}
       >
         {options.map((option, index) => (
           <div key={index} className="dock-item">
@@ -75,19 +74,15 @@ const Dock = ({
           </div>
         ))}
       </div>
+      )
+     }
 
-      {isVisible && !shouldHideDock && (
+      {isVisible  && (
         <button onClick={toggleDockVisibility} className="button-hide">
           {hideLabel}
         </button>
       )}
 
-      {!isVisible && shouldHideDock && (
-        <button onClick={toggleDockVisibility} className="button-show">
-          {showLabel}
-          <span className="badge">{totalIcons}</span>
-        </button>
-      )}
     </div>
   );
 };
